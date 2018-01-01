@@ -2,7 +2,7 @@
 
 This is a small Go project I made to create a "log" of my dreams and also use it as a diary. It creates two files in the user's home directory: `dream.txt` (for the dream log) and `day.txt` (for the diary). 
 
-The program uses the [https://github.com/mitchellh/go-homedir](mitchellh/go-homedir) package.
+The program uses the [mitchellh/go-homedir](https://github.com/mitchellh/go-homedir) package.
 
 **Available commands:**
  - **write dream|day** - write entry to the log
