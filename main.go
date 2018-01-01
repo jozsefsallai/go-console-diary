@@ -17,7 +17,7 @@ func main() {
 	// Get and check for arguments
 	args := os.Args[1:]
 	if len(os.Args) == 1 {
-		fmt.Print("No arguments provided. Use \"", appname, " help\".")
+		fmt.Print("No arguments provided. Use \"", appname, " help\".\n")
 		return
 	}
 
@@ -27,7 +27,7 @@ func main() {
 				write(args[1])
 				return
 			} else {
-				fmt.Println("Usage:", appname, "write dream|day")
+				fmt.Println("Usage:", appname, "write dream|day\n")
 				return
 			}
 		case "read":	// If the correct argument was provided, and all three arguments are present, call the read function
@@ -35,7 +35,7 @@ func main() {
 				read(args[1], args[2])
 				return
 			} else {
-				fmt.Println("Usage:", appname, "read dream|day MM-DD-YYYY")
+				fmt.Println("Usage:", appname, "read dream|day word\n")
 				return
 			}
 		case "help":	// Call the help function

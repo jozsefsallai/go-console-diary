@@ -8,9 +8,16 @@ import (
 	"io"
 	"io/ioutil"
 	"strings"
+	"github.com/mitchellh/go-homedir"
 )
 
 func write(option string) {
+
+	// Get user's home directory
+	homepath, err := homedir.Dir()
+	if err != nil {
+		panic(err)
+	}
 
 	// Create a welcome string based on the user's choice
 	var welcome string
@@ -35,8 +42,8 @@ func write(option string) {
 	entry += input
 
 	// If file exists, concatenate the contents of the file with the current entry string
-	if _, err := os.Stat(option + ".txt"); err == nil {
-		bytes, err := ioutil.ReadFile(option + ".txt")
+	if _, err := os.Stat(homepath + "/" + option + ".txt"); err == nil {
+		bytes, err := ioutil.ReadFile(homepath + "/" + option + ".txt")
 		if err != nil {
 			panic(err)
 		}
@@ -44,7 +51,7 @@ func write(option string) {
 	}
 
 	// Open the text file
-	file, err := os.Create(option + ".txt")
+	file, err := os.Create(homepath + "/" + option + ".txt")
 	if err != nil {
 		panic(err)
 	}
